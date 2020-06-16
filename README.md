@@ -1,5 +1,6 @@
 # TabStriper
-TabStriper is a library that switches screens by selecting tabs created with SwiftUI!!!
+TabStriper is a library that switches screens by selecting a tab or swiping the screen
+Built with SwiftUI
 
 <p align="center">
     <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platforms" />
