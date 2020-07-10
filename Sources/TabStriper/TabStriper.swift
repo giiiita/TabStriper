@@ -11,15 +11,16 @@ import SwiftUI
 public struct TabStriper: View {
     
     @State private var offset: CGFloat = 0
-    @State private var index: Int = 0
+    @Binding var index: Int
     
     private var selectedTitleColor: Color = Color.black
     private var titleColor: Color = Color.gray
     private var barColor: Color = Color.green
     
     let stripViews: [StripView]
-    public init(stripViews: [StripView]) {
+    public init(stripViews: [StripView], index: Binding<Int>) {
         self.stripViews = stripViews
+        self._index = index
     }
     
     public var body: some View {
