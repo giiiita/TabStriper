@@ -17,7 +17,7 @@ struct StripBar: View {
     let selectedTitleColor: Color
     let titleColor: Color
     var barColor: Color = Color.green
-    
+
     var body: some View {
         GeometryReader { geomerty in
             HStack(alignment: .center, spacing: 0) {
@@ -35,7 +35,7 @@ struct StripBar: View {
                                     .font(.system(size: 17))
                                     .bold()
                                     .foregroundColor(self.index == (view.id - 1) ? self.selectedTitleColor : self.titleColor)
-                                    .frame(width: geomerty.size.width / CGFloat(self.views.count), height: 57)
+                                    .frame(width: geomerty.size.width / CGFloat(self.views.count), height: geomerty.size.height)
                                 Rectangle()
                                     .fill(self.barColor)
                                     .frame(width: geomerty.size.width / CGFloat(self.views.count), height: 2)

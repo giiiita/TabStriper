@@ -16,6 +16,7 @@ public struct TabStriper: View {
     private var selectedTitleColor: Color = Color.black
     private var titleColor: Color = Color.gray
     private var barColor: Color = Color.green
+    private var barHeight: CGFloat = 57
     
     let stripViews: [StripView]
     public init(stripViews: [StripView], index: Binding<Int>) {
@@ -33,7 +34,7 @@ public struct TabStriper: View {
                     selectedTitleColor: self.selectedTitleColor,
                     titleColor: self.titleColor,
                     barColor: self.barColor
-                ).frame(width: geometry.size.width, height: 57)
+                ).frame(width: geometry.size.width, height: self.barHeight)
                 Divider()
                 GeometryReader { geometry in
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -83,5 +84,9 @@ extension TabStriper: Buildable {
     
     public func barColor(_ barColor: Color) -> Self {
         mutating(keyPath: \.barColor, value: barColor)
+    }
+
+    public func tabbarHeight(_ height: CGFloat) -> Self {
+        mutating(keyPath: \.barHeight, value: height)
     }
 }
