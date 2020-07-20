@@ -66,7 +66,8 @@ public struct TabStriper: View {
                     )
                 }
                 Spacer()
-                
+            }.onAppear() {
+                self.offset = -geometry.size.width * CGFloat(self.index)
             }
         }
     }
